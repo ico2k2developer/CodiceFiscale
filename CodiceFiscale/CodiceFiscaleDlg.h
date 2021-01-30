@@ -24,6 +24,13 @@ public:
 // Implementazione
 protected:
 	HICON m_hIcon;
+	CEdit *name,*surname,*result;
+	CButton *male,*female,*generate;
+	CDateTimeCtrl *birthdate;
+	CComboBox *town;
+
+	void onGenerateClick();
+	void onSexClick();
 
 	// Funzioni generate per la mappa dei messaggi
 	virtual BOOL OnInitDialog();

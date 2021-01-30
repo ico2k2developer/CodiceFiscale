@@ -31,6 +31,9 @@ void CCodiceFiscaleDlg::DoDataExchange(CDataExchange* pDX)
 BEGIN_MESSAGE_MAP(CCodiceFiscaleDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
+	ON_BN_CLICKED(IDC_GENERATE,onGenerateClick)
+	ON_BN_CLICKED(IDC_MALE,onSexClick)
+	ON_BN_CLICKED(IDC_FEMALE,onSexClick)
 END_MESSAGE_MAP()
 
 
@@ -43,10 +46,16 @@ BOOL CCodiceFiscaleDlg::OnInitDialog()
 	// Impostare l'icona per questa finestra di dialogo.  Il framework non esegue questa operazione automaticamente
 	//  se la finestra principale dell'applicazione non è una finestra di dialogo.
 	SetIcon(m_hIcon, TRUE);			// Impostare icona grande.
-	SetIcon(m_hIcon, FALSE);		// Impostare icona piccola.
+	//SetIcon(m_hIcon, FALSE);		// Impostare icona piccola.
 
 	// TODO: aggiungere qui inizializzazione aggiuntiva.
-
+	HWND hwnd = AfxGetMainWnd()->GetSafeHwnd();
+	generate = (CButton*)GetDlgItem(IDC_GENERATE);
+	male = (CButton*)GetDlgItem(IDC_MALE);
+	female = (CButton*)GetDlgItem(IDC_FEMALE);
+	name = (CEdit*)GetDlgItem(IDC_NAME);
+	surname = (CEdit*)GetDlgItem(IDC_SURNAME);
+	male->SetCheck(BST_CHECKED);
 	return TRUE;  // restituisce TRUE a meno che non venga impostato lo stato attivo su un controllo.
 }
 
@@ -84,5 +93,24 @@ void CCodiceFiscaleDlg::OnPaint()
 HCURSOR CCodiceFiscaleDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
+}
+
+void CCodiceFiscaleDlg::onGenerateClick()
+{
+	
+}
+
+void CCodiceFiscaleDlg::onSexClick()
+{
+	if (male->GetCheck() == BST_CHECKED)
+	{
+		male->SetCheck(BST_UNCHECKED);
+		female->SetCheck(BST_CHECKED);
+	}
+	else
+	{
+		female->SetCheck(BST_UNCHECKED);
+		male->SetCheck(BST_CHECKED);
+	}
 }
 

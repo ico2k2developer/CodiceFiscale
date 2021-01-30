@@ -19,6 +19,16 @@
 #define IDC_MALE                        1008
 #define IDC_MALE2                       1009
 #define IDC_FEMALE                      1009
+#define IDC_TOWNS                       1010
+#define IDC_DAY3                        1011
+#define IDC_TOWN                        1011
+#define IDC_DATE                        1014
+#define IDC_RESULTS                     1015
+#define IDC_EDIT3                       1017
+#define IDC_RESULT                      1017
+#define IDC_BUTTON1                     1018
+#define IDC_GENERATE                    1018
+#define IDC_SPIN1                       1025
 
 // Next default values for new objects
 // 
@@ -26,7 +36,7 @@
 #ifndef APSTUDIO_READONLY_SYMBOLS
 #define _APS_NEXT_RESOURCE_VALUE        130
 #define _APS_NEXT_COMMAND_VALUE         32771
-#define _APS_NEXT_CONTROL_VALUE         1009
+#define _APS_NEXT_CONTROL_VALUE         1026
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif
